@@ -6,8 +6,10 @@
       <class name="lykaproject.Page1lyka">
         <methods>
           <include name="setup"/>
-          <include name="typeandselectprimarybreed"/>
+          <include name="getCurrentUr"/>
           <include name="tearDown"/>
+          <include name="dogname"/>
+          <include name="typbreed"/>
         </methods>
       </class> <!-- lykaproject.Page1lyka -->
     </classes>

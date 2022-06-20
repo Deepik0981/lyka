@@ -1,0 +1,1 @@
+{"uuid":"a87c905d-d3de-4ce5-9802-1b2511582d42","name":"lykaproject.TestngBasics","children":["95dce410-d9e4-46fc-92ef-e86405c5bccd"],"befores":[{"name":"LaunchBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1655569866235,"stop":1655569866235}],"afters":[],"start":1655569866199,"stop":1655569871467}

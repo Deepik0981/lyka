@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -17,94 +18,99 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Page1lyka {
 	
-	           WebDriver driver;
+	WebDriver driver;
 				
-				@BeforeMethod
+				@BeforeClass
 				public void setup()
 				{
 				WebDriverManager.chromedriver().setup();	
 				driver = new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-				driver.get("https://lyka.com.au/plan/create");	
 				driver.manage().window().maximize();
-                }	
+				}
+				
+				
+				@BeforeMethod               // Assertion:Asser.Metthod(Actual,expected)
+				public void getCurrentUr() {
+					
+					driver.get("https://lyka.com.au/plan/create");
+			   // driver.getCurrentUrl();
+					
+				//String URL = driver.getCurrentUrl();
+			//	Assert.assertEquals(URL, "https://lyka.com.au/plan/create" );
+				//Assert.assertEquals(driver.getCurrentUrl(), "https://lyka.com.au/plan/create");
+				
+                
+				//String expected_url = "https://lyka.com.au/plan/creat";
+		       // String current_url = driver.getCurrentUrl();
+		 
+		        //Assert.assertTrue(expected_url.equals(current_url), "URL does not match\n");
+		        
+		      //  System.out.println("AssertTrue Test Passed\n");
+				
+				}	
 				
 				
 				@Test(priority=1)
 				public void logo()
 				
 				{
-					 //WebElement displaystatus = driver.findElement(By.xpath("//div[@class=''col-4']"));
-					// AssertJUnit.assertEquals(displaystatus,true);
-				 driver.findElement(By.cssSelector("img[src='../assets/logo/lyka_logo_green.png']"));
-					//AssertJUnit.assertEquals(displaystatus,true);
+					WebElement Lykalogo = driver.findElement(By.cssSelector("img[src='../assets/logo/lyka_logo_green.png']"));
+				     Assert.assertEquals(true, Lykalogo.isDisplayed());
 				}
 				
+				@Test 
+				public void  postcode() {
+				driver.findElement(By.id("postcode-input")).sendKeys("3000");
+				 
+				}  // Assert.assertEquals(true, Postcode.isDisplayed());
+				    		
 				
-				@Test(priority=2)
-				public void postcode()
-				
-					{
-					driver.findElement(By.id("postcode-input")).sendKeys("3000");	
-					}
-				
-				
-				@Test(priority=3)
-				public void dogname()
-				
-					{
-					driver.findElement(By.id("dog-name-11")).sendKeys("Lucy");	
-					driver.findElement(By.xpath("//span[text()='Next']")).click();	
+				@Test 
+				 
+				 public void dogname() {
+				 
+					 driver.findElement(By.xpath("//input[@class='form-control input-field-onboarding input-field-onboarding-question text-left no-border-right']")).sendKeys("Lucy");
 					
-					}
+					//driver.findElement(By.xpath("//input[@id='dog-name-11']")).sendKeys("Lucy");
+					// driver.findElement(By.xpath("//input[@placeholder=='Beethoven']")).sendKeys("Lucy");
 				
-				
-                @Test(priority=4)	
-				public void dogbreed( ) {
-				
-				driver.findElement(By.id("breed-dropdown")).click();
+				}
+				 
+							
+				 @Test
+				 
+				 public void typbreed() {
+				 
+				 
+			    driver.findElement(By.id("breed-dropdown")).click();
 				List<WebElement> breedtypes=driver.findElements(By.xpath("//*[@id='onboarding-content-rhs']/div/div[2]/div/div/div/div[1]/div/div/div/div/div/div/ul/li"));
-					
-					//List<WebElement> breedtypes=driver.findElements(By.xpath("div[@class='dropdown-ul-li-with-scroll-v2 border-top-0']ul/li"));
-				for(WebElement btypes : breedtypes)
-					     {
 						
-						if(btypes.getText().equals("Pure Breed"))
-						
-						{
-						btypes.click();
-						break;
-						}
-						
-					    }
-				}
-					
-						//driver.findElement(By.xpath("//div[@class='form-group custom-dropdown-v2 option-selected']")).click();
-		
-      
-                
-                
-                @Test
-                
-				public void  typeandselectprimarybreed()
+						//List<WebElement> breedtypes=driver.findElements(By.xpath("div[@class='dropdown-ul-li-with-scroll-v2 border-top-0']ul/li"));
+					for(WebElement btypes : breedtypes)
+						     {
+							
+							if(btypes.getText().equals("Pure Breed"))
+							
+							{
+							btypes.click();
+							break;
+							}
+							
+		}}
+				
+				
+
+                 @AfterMethod
+				
+				 public void tearDown()
 				{
-                driver.findElement(By.id("primary-breed-11l")).sendKeys("na");	
+				//driver.quit();	
+			
 				}
 				
-                
-                
-                
-				@AfterMethod
-				
-				public void tearDown()
-				{
-				driver.quit();	
+       
 				}
-				
-				
-	
-}
-	
 
 				
 			
