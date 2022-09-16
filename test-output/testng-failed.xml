@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lykaproject.Page1lyka">
+      <class name="com.lyka.qa.testcases.postcodepage_test">
         <methods>
-          <include name="setup"/>
-          <include name="getCurrentUr"/>
+          <include name="validatepostcodepagetest"/>
           <include name="tearDown"/>
-          <include name="dogname"/>
-          <include name="typbreed"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- lykaproject.Page1lyka -->
+      </class> <!-- com.lyka.qa.testcases.postcodepage_test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

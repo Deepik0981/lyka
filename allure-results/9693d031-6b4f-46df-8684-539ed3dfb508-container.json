@@ -1,0 +1,1 @@
+{"uuid":"9693d031-6b4f-46df-8684-539ed3dfb508","name":"lykaproject.lyka_getstarted","children":["35d94884-7626-4baf-b0aa-2b0640995358"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1656345402526,"stop":1656345407601}],"afters":[],"start":1656345402494,"stop":1656345418478}

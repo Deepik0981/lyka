@@ -84,23 +84,9 @@ public class Page1lyka {
 				 
 				 
 			    driver.findElement(By.id("breed-dropdown")).click();
-				List<WebElement> breedtypes=driver.findElements(By.xpath("//*[@id='onboarding-content-rhs']/div/div[2]/div/div/div/div[1]/div/div/div/div/div/div/ul/li"));
-						
-						//List<WebElement> breedtypes=driver.findElements(By.xpath("div[@class='dropdown-ul-li-with-scroll-v2 border-top-0']ul/li"));
-					for(WebElement btypes : breedtypes)
-						     {
 							
-							if(btypes.getText().equals("Pure Breed"))
-							
-							{
-							btypes.click();
-							break;
-							}
-							
-		}}
+		         }
 				
-				
-
                  @AfterMethod
 				
 				 public void tearDown()

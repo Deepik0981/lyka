@@ -3,13 +3,15 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="seleniumwebdrivermanager.webdrivermanagertest">
+      <class name="lykaproject.Page1lyka">
         <methods>
-          <include name="logo"/>
           <include name="setup"/>
+          <include name="getCurrentUr"/>
           <include name="tearDown"/>
+          <include name="dogname"/>
+          <include name="typbreed"/>
         </methods>
-      </class> <!-- seleniumwebdrivermanager.webdrivermanagertest -->
+      </class> <!-- lykaproject.Page1lyka -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
