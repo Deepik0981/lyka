@@ -10,12 +10,13 @@ public class genderpage extends testBase{
 	
 	//Page factory-OR   @FindBy-annotation
 		
-		@FindBy(xpath="//span[text()='Boy']")
+	    @FindBy(xpath="//span[@class='title' and text()='Boy']")
+		//@FindBy(xpath="//span[@class='title']']/span[text()='Boy']")
+		//@FindBy(xpath="//span[@class='title']")
 		WebElement button1;  
 		
-		@FindBy(xpath="//span[text()='Girl']")
-	    WebElement  button2;
-		
+		//@FindBy(xpath="//span[@class='title'and @text='Boy']")
+	   // WebElement  button		
 		@FindBy(xpath="//button[@text='Next']")
 	    WebElement  button3;
 
@@ -24,26 +25,27 @@ public class genderpage extends testBase{
         }
    
         
-        public breedpage validategenderBoy() {
+        public breedpage validategenderpage() {
   	     button1.click();
+  	     button3.click();
          return new breedpage();
         }
          
          
-         public breedpage validategenderGirl() {
+        /* public breedpage validategenderGirl() {
       	     button2.click();
              return new breedpage();
          }
          
         
-         public breedpage validateNextbutton() {
-      	     button3.click();
-             return new breedpage(); 
-         
+        // public breedpage validateNextbutton() {
+      	 //    button3.click();
+          //   return new breedpage(); 
+         */
      	
      }
   	
   	
   	
 
-  }
+  
